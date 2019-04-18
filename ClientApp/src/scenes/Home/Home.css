@@ -3,5 +3,13 @@
   height: 100%;
 }
 
+.video-background div {
+  position: absolute;
+  z-index: 2;
+}
+
+.video-background div ~ div {
+  z-index: 0;
+}
 
 
