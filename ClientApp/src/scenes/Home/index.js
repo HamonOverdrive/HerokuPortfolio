@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Header, Divider, Image, Segment, Grid, Container, Label } from 'semantic-ui-react'
+import { Header, Icon, Divider, Image, Segment, Grid, Container, Label } from 'semantic-ui-react'
 
 import YoutubeBackground from 'react-youtube-background'
 import "./Home.css"
@@ -28,17 +28,48 @@ const Home = props => (
         </Grid.Column>
       </Grid.Row>
       <Grid.Row className="marginRow" verticalAlign="bottom">
-        <Grid.Column width={10}>
+        <Grid.Column width={9}>
           <p>무제한 <span className={"bigWord"}>솔루션</span></p>
           <p>천 <span className={"bigWord"}>코드</span></p>
-          <p className={"specialPara"}>[<span className={"stripedBack"}>사피엔스에서</span>]</p>
+          <p className={"specialPara"}>
+            {/* <span className="bracket">[</span> */}
+            <span className={"stripedBack"}>루덴에서 사피엔스로</span>
+            {/* <span className="bracket">]</span> */}
+          </p>
           <button class="redButton">INFORMATION</button> <p className={"buttonPara"}>Current Project</p>
         </Grid.Column>
-        <Grid.Column width={6}>
+        <Grid.Column width={7}>
           <Image.Group size="small">
-          <Image src={Pandemic} className="mainCard" />
-          <Image src={CageShopper} className="mainCard" />
+          {/* <Image src={Pandemic} className="mainCard" floated="right" />
+          <Image src={CageShopper} className="mainCard" floated="right" /> */}
+          <ul id="project_banner">
+            <li>
+              <a id="projectOne"></a>
+            </li>
+            <li>
+              <a id="projectTwo"></a>
+            </li>
+          </ul>
           </Image.Group>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column className="footerColumn">
+          <div>
+          Contact /
+            <a href="https://www.linkedin.com/in/robinlee64/">
+              <Icon link name='linkedin' />
+            </a>
+            <a href="https://github.com/HamonOverdrive">
+              <Icon link name='github' />
+            </a>
+
+          </div>
+          <div className="borderBottom">
+          </div>
+          <div>
+            &#169; Lee Productions.
+          </div>
         </Grid.Column>
       </Grid.Row>
 
