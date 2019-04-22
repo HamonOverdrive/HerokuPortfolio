@@ -4,6 +4,51 @@
   background-position: center center;
 }
 
+ /* wrapper box and overlay classes are the animations for hovering and making a color appear  */
+.wrapper{
+  position: relative;
+  width: 500px;
+  height: 100px;
+}
+
+.box{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.overlay{
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(265, 70%, 39%, 0.95);
+  /* background-image:
+    linear-gradient(
+      hsla(322, 66%, 50%, 0.95), hsla(235, 100%, 28%, 0.9)
+    ); */
+  -webkit-transition: opacity 1s ease-out;
+  -moz-transition: opacity 1s ease-out;
+  -o-transition: opacity 1s ease-out;
+  transition: opacity 1s ease-out;
+}
+
+.overlayTwo {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(235, 100%, 28%, 0.9);
+  -webkit-transition: opacity 1s ease-out;
+  -moz-transition: opacity 1s ease-out;
+  -o-transition: opacity 1s ease-out;
+  transition: opacity 1s ease-out;
+}
+
+.overlay:hover, .overlayTwo:hover {
+  opacity: 0.8;
+}
 
 #project_banner a#projectOne{
   display: block;
@@ -17,4 +62,5 @@
   width:500px;
   height:100px;
   background-image:url(../../scenes/Home/Pandemic.png);
+
 }

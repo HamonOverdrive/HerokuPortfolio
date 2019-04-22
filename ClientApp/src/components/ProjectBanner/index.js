@@ -5,10 +5,22 @@ import "./ProjectBanner.css"
 const ProjectBanner = props => (
   <ul id="project_banner">
     <li>
-      <a id="projectOne"></a>
+      <div class="wrapper">
+        <div class="box">
+          <a id="projectOne"></a>
+        </div>
+        <a class="overlay" href="https://cageshopper.herokuapp.com/">
+        </a>
+      </div>
     </li>
     <li>
-      <a id="projectTwo"></a>
+      <div class="wrapper">
+          <div class="box">
+            <a id="projectTwo"></a>
+          </div>
+          <a class="overlayTwo" href="https://dev-pandemic.firebaseapp.com/">
+          </a>
+      </div>
     </li>
   </ul>
 );
