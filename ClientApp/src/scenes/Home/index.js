@@ -8,6 +8,8 @@ import "./Home.css"
 import CageShopper from './CageShopper.png'
 import Pandemic from './Pandemic.png'
 
+import ProjectBanner from '../../components/ProjectBanner'
+
 const Home = props => (
     <YoutubeBackground
     videoId={"atqBhyqq6xE"}     // default -> "jssO8-5qmag"
@@ -40,16 +42,7 @@ const Home = props => (
         </Grid.Column>
         <Grid.Column width={7}>
           <Image.Group size="small">
-          {/* <Image src={Pandemic} className="mainCard" floated="right" />
-          <Image src={CageShopper} className="mainCard" floated="right" /> */}
-          <ul id="project_banner">
-            <li>
-              <a id="projectOne"></a>
-            </li>
-            <li>
-              <a id="projectTwo"></a>
-            </li>
-          </ul>
+            <ProjectBanner />
           </Image.Group>
         </Grid.Column>
       </Grid.Row>
