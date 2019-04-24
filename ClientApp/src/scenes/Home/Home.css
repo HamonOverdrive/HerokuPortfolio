@@ -89,8 +89,17 @@ div > div.row > .footerColumn{
     border-bottom: 1px solid white;
 }
 
-/*
-.transition{
-  animation-delay: 5s;
-} */
+
+/* these are for transitions to override display block */
+.visible.transition.inline-block{
+  display: inline-block!important;
+}
+
+.visible.transition.inline{
+  display: inline!important;
+}
+
+.visible.transition.flex{
+  display: flex!important;
+}
 

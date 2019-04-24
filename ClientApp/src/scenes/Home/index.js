@@ -8,13 +8,14 @@ import "./Home.css"
 
 import ProjectBanner from '../../components/ProjectBanner'
 
+import { InlineTransition, TransitionDiv } from './styled.js';
 
 class Home extends Component{
   constructor(props){
     super(props)
     this.state= {
       animation: 'slide right',
-      duration: 800,
+      duration: 400,
       visible: false,
       visibleTwo: false
     }
@@ -23,6 +24,7 @@ class Home extends Component{
 
 
 
+  // first have written content appear then projects and last hamburger menu
   handleVisibility(){
     this.setState({ visible: !this.state.visible });
     setTimeout(
@@ -30,7 +32,7 @@ class Home extends Component{
         this.setState({ visibleTwo: !this.state.visibleTwo });
       }
       .bind(this),
-      2000
+      500
   );
   }
 
@@ -59,6 +61,7 @@ class Home extends Component{
           </Grid.Row>
           <Grid.Row className="marginRow" verticalAlign="bottom">
             <Grid.Column width={9}>
+
               <Transition.Group animation={animation} duration={duration}>
                 {visible && <p>무제한 <span className={"bigWord"}>솔루션</span></p> }
                 {visible && <p>천 <span className={"bigWord"}>코드</span></p>}
@@ -66,16 +69,13 @@ class Home extends Component{
                   <p className={"specialPara"}>
                     <span className={"stripedBack"}>루덴에서 사피엔스로</span>
                   </p>}
-
               </Transition.Group>
 
-              {/* need to make this group inline-block transition group is making display:block */}
               <Transition.Group animation={animation} duration={duration}>
-              {visibleTwo && <button className="redButton">INFORMATION</button>}
-                  {visibleTwo && <p className={"buttonPara"}>Current Project</p>}
+              {visibleTwo && <button className="redButton inline-block">INFORMATION</button>}
+                  {visibleTwo && <p className="buttonPara inline-block">Current Project</p>}
               </Transition.Group>
 
-              {/* <button className="redButton">INFORMATION</button> <p className={"buttonPara"}>Current Project</p> */}
             </Grid.Column>
             <Grid.Column width={7}>
               <Image.Group size="small">
@@ -85,6 +85,8 @@ class Home extends Component{
           </Grid.Row>
           <Grid.Row>
             <Grid.Column className="footerColumn">
+            <Transition.Group animation={animation} duration={duration}>
+            {visibleTwo &&
               <div>
               Contact /
                 <a href="https://www.linkedin.com/in/robinlee64/">
@@ -93,13 +95,17 @@ class Home extends Component{
                 <a href="https://github.com/HamonOverdrive">
                   <Icon link name='github' />
                 </a>
+              </div>}
 
-              </div>
-              <div className="borderBottom">
-              </div>
-              <div>
+              {visibleTwo &&
+                <div className="borderBottom">
+                </div>}
+
+              {visibleTwo &&  <div>
                 &#169; Lee Productions.
-              </div>
+              </div>}
+
+              </Transition.Group>
             </Grid.Column>
           </Grid.Row>
 
