@@ -75,6 +75,14 @@
   font-size: 1rem;
 }
 
+.marginRow > div > .redButton:hover + .buttonPara{
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFUlEQVQImWNgQAKvGbTPkMphYGAAAADHB4lgKXDGAAAAAElFTkSuQmCC) repeat;
+}
+
+.marginRow > div > .buttonPara:hover{
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFUlEQVQImWNgQAKvGbTPkMphYGAAAADHB4lgKXDGAAAAAElFTkSuQmCC) repeat;
+}
+
 
 div > div.row > .footerColumn{
   display: flex !important;
