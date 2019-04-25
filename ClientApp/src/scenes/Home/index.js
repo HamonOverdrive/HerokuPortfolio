@@ -7,6 +7,7 @@ import YoutubeBackground from 'react-youtube-background'
 import "./Home.css"
 
 import ProjectBanner from '../../components/ProjectBanner'
+import InfoModal from './components/InfoModal'
 
 import { InlineTransition, TransitionDiv } from './styled.js';
 
@@ -57,6 +58,9 @@ class Home extends Component{
               <br></br>
               Productions
             </h5>
+            </Grid.Column>
+            <Grid.Column floated='right'>
+            <InfoModal />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className="marginRow" verticalAlign="bottom">
