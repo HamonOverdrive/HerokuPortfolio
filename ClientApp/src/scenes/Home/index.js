@@ -9,7 +9,7 @@ import "./Home.css"
 import ProjectBanner from '../../components/ProjectBanner'
 import InfoModal from './components/InfoModal'
 
-import { InlineTransition, TransitionDiv } from './styled.js';
+import { BigWord, TransitionDiv } from './styled.js';
 
 class Home extends Component{
   constructor(props){
@@ -67,8 +67,8 @@ class Home extends Component{
             <Grid.Column width={9}>
 
               <Transition.Group animation={animation} duration={duration}>
-                {visible && <p>무제한 <span className={"bigWord"}>솔루션</span></p> }
-                {visible && <p>천 <span className={"bigWord"}>코드</span></p>}
+                {visible && <p>무제한 <BigWord>솔루션</BigWord></p> }
+                {visible && <p>천 <BigWord>코드</BigWord></p>}
                 {visible &&
                   <p className={"specialPara"}>
                     <span className={"stripedBack"}>루덴에서 사피엔스로</span>
