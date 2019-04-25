@@ -60,7 +60,7 @@ class Home extends Component{
             </h5>
             </Grid.Column>
             <Grid.Column floated='right'>
-            <InfoModal />
+              <InfoModal />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className="marginRow" verticalAlign="bottom">
