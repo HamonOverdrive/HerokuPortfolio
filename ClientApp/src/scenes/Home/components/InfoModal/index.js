@@ -1,34 +1,61 @@
-import React from 'react'
-import { Button, Header, Icon, Image, Modal, Grid } from 'semantic-ui-react'
+import React, {Component} from 'react';
+import { Button, Header, Icon, Image, Modal, Grid, Menu } from 'semantic-ui-react';
 import { BiggerIcon, FixedButton } from './styled.js';
 import "./InfoModal.css"
-import LeftMenu from './components/LeftMenu'
 
-const ModalScrollingExample = () => (
-  <Modal className='centered' size='fullscreen' closeIcon trigger={<FixedButton icon><BiggerIcon name='align justify' /></FixedButton>}>
-    <Modal.Header>Information</Modal.Header>
-    <Grid>
-    <LeftMenu />
-    <Grid.Column width={12}>
-      <Modal.Content image scrolling>
-        <Image wrapped size='medium' src='https://react.semantic-ui.com/images/wireframe/image.png' />
-        <Modal.Description>
-          <Header>Modal Header</Header>
-          <p>This is an example of expanded content that will cause the modal's dimmer to scroll</p>
-          <p>This is an example of expanded content that will cause the modal's dimmer to scroll</p>
-          <p>This is an example of expanded content that will cause the modal's dimmer to scroll</p>
-          <p>This is an example of expanded content that will cause the modal's dimmer to scroll</p>
-        </Modal.Description>
-      </Modal.Content>
-    </Grid.Column>
-    </Grid>
+// import all the modal content scenes
+import About from './scenes/About'
+import Projects from './scenes/Projects'
+import SiteInfo from './scenes/SiteInfo'
 
-    <Modal.Actions>
-      <Button primary>
-        Proceed <Icon name='right chevron' />
-      </Button>
-    </Modal.Actions>
-  </Modal>
-)
 
+class ModalScrollingExample extends Component{
+  constructor(){
+    super()
+    this.state = {
+      activeItem: 'about'
+    }
+
+  }
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+
+  render(){
+    const { activeItem } = this.state
+
+
+    const CONTENT_STATES = {
+      'about':<About />,
+      'projects': <Projects />,
+      'site': <SiteInfo />
+    }
+
+
+  return(
+    <Modal className='centered' size='fullscreen' closeIcon trigger={<FixedButton icon><BiggerIcon name='align justify' /></FixedButton>}>
+      <Modal.Header>Information</Modal.Header>
+      <Grid>
+        <Grid.Column width={4}>
+          <Menu fluid vertical tabular>
+            <Image />
+            <Menu.Item name='about' active={activeItem === 'about'} onClick={this.handleItemClick} />
+            <Menu.Item name='projects' active={activeItem === 'projects'} onClick={this.handleItemClick} />
+            <Menu.Item name='site' active={activeItem === 'site'} onClick={this.handleItemClick}>Site Info</Menu.Item>
+          </Menu>
+        </Grid.Column>
+        <Grid.Column width={12}>
+          {CONTENT_STATES[activeItem]}
+        </Grid.Column>
+      </Grid>
+
+      <Modal.Actions>
+        <Button primary>
+          Proceed <Icon name='right chevron' />
+        </Button>
+      </Modal.Actions>
+    </Modal>
+  )};
+
+}
 export default ModalScrollingExample
