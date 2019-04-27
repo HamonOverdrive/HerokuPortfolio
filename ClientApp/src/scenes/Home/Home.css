@@ -94,6 +94,11 @@ div > div.row > .footerColumn{
     border-bottom: 1px solid white;
 }
 
+i.icon, i.icons{
+  color:white;
+  font-size: 1.2rem;
+}
+
 
 /* these are for transitions to override display block */
 .visible.transition.inline-block{

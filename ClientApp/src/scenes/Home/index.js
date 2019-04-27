@@ -39,13 +39,13 @@ class Home extends Component{
       500
   );
 
-  this.timer = setTimeout(
-    function() {
-      this.setState({ bannerVisible: !this.state.bannerVisible });
-    }
-    .bind(this),
-    1000
-);
+    this.timer = setTimeout(
+      function() {
+        this.setState({ bannerVisible: !this.state.bannerVisible });
+      }
+      .bind(this),
+      1000
+  );
   }
 
   componentWillUnmount() {
