@@ -6,3 +6,25 @@ body{
 .description{
   padding:1rem;
 }
+
+@media only screen and (max-width: 1200px) {
+  html{
+    font-size: 12px;
+  }
+    }
+
+
+/* anything below iphone 6/7/8 plus size */
+@media only screen and (max-width: 414px) {
+  html{
+    font-size: 12px;
+  }
+    }
+
+
+    /* anything below galaxy s9/+ size */
+@media only screen and (max-width: 360px) {
+  html{
+    font-size: 10px;
+  }
+    }

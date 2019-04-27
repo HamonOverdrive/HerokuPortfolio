@@ -113,3 +113,6 @@ i.icon, i.icons{
   display: flex!important;
 }
 
+.row.nowrap{
+  flex-wrap: nowrap !important;
+}
