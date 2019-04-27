@@ -5,12 +5,11 @@ export const T = styled(Transition)`
 `
 
 export const TransitionDiv = styled.div`
-
-display:flex;
+  display:flex;
 `
 
 export const BigWord = styled.span`
-font-size: 200%;
+  font-size: 200%;
 `
 
 

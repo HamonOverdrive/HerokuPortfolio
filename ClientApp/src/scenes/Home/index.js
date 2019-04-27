@@ -14,11 +14,13 @@ import { BigWord, TransitionDiv } from './styled.js';
 class Home extends Component{
   constructor(props){
     super(props)
+    this.timer = null;
     this.state= {
       animation: 'slide right',
       duration: 400,
       visible: false,
-      visibleTwo: false
+      visibleTwo: false,
+      bannerVisible: false
     }
     this.handleVisibility = this.handleVisibility.bind(this)
   }
@@ -28,22 +30,37 @@ class Home extends Component{
   // first have written content appear then projects and last hamburger menu
   handleVisibility(){
     this.setState({ visible: !this.state.visible });
-    setTimeout(
+
+    this.timer = setTimeout(
       function() {
         this.setState({ visibleTwo: !this.state.visibleTwo });
       }
       .bind(this),
       500
   );
+
+    this.timer = setTimeout(
+      function() {
+        this.setState({ bannerVisible: !this.state.bannerVisible });
+      }
+      .bind(this),
+      1000
+  );
   }
+
+  componentWillUnmount() {
+    // Make sure to clear the interval, on unmount
+    clearInterval(this.timer);
+ }
 
 
 
   render(){
-    const { animation, duration, visible, visibleTwo } = this.state
+    const { animation, duration, visible, visibleTwo, bannerVisible } = this.state
     return(
         <YoutubeBackground
-        videoId={"atqBhyqq6xE"}     // default -> "jssO8-5qmag"
+        // videoId={"atqBhyqq6xE"}     // default -> "jssO8-5qmag"
+        videoId={"0ROpUxGoa-0"}
         // aspectRatio={"1:1"} // default -> "16:9"
         // overlay={string}       // defaults -> null | e.g. "rgba(0,0,0,.4)"
         className={"video-background"}   // defaults -> null
@@ -60,7 +77,9 @@ class Home extends Component{
             </h5>
             </Grid.Column>
             <Grid.Column floated='right'>
-            <InfoModal />
+              {/* <Transition visible={bannerVisible} animation='fly left' duration={1500}> */}
+                <InfoModal />
+              {/* </Transition> */}
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className="marginRow" verticalAlign="bottom">
@@ -82,9 +101,11 @@ class Home extends Component{
 
             </Grid.Column>
             <Grid.Column width={7}>
+            <Transition visible={bannerVisible} animation='scale' duration={800}>
               <Image.Group size="small">
                 <ProjectBanner />
               </Image.Group>
+              </Transition>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>

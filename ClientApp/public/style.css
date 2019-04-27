@@ -1,6 +1,8 @@
 body{
-  font-family: Sintony,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif,"メイリオ",Meiryo;
+  font-family: Sintony,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif,"メイリオ",Meiryo !important;
   color: white;
 }
 
-
+.description{
+  padding:1rem;
+}
