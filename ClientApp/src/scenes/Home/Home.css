@@ -62,6 +62,7 @@
   margin: 0 2px;
   cursor: pointer;
   font-weight: normal;
+  margin-right: 1rem;
 }
 
 .marginRow > div > .buttonPara{

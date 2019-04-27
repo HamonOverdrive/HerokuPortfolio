@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, Header, Icon, Image, Modal, Grid, Menu } from 'semantic-ui-react';
+import { Button, Header, Icon, Image, Modal, Grid, Menu, Transition } from 'semantic-ui-react';
 import { BiggerIcon, FixedButton } from './styled.js';
 import "./InfoModal.css"
 
@@ -33,7 +33,10 @@ class ModalScrollingExample extends Component{
 
 
   return(
-    <Modal className='centered' size='fullscreen' closeIcon trigger={<FixedButton icon><BiggerIcon name='align justify' /></FixedButton>}>
+    <Modal className='centered' size='fullscreen' closeIcon trigger={
+    <FixedButton icon>
+      <BiggerIcon name='align justify' />
+    </FixedButton>}>
       <Modal.Header>Information</Modal.Header>
       <Grid>
         <Grid.Column width={4}>
