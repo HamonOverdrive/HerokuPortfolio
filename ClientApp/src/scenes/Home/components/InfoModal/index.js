@@ -53,9 +53,16 @@ class ModalScrollingExample extends Component{
       </Grid>
 
       <Modal.Actions>
-        <Button primary>
-          Proceed <Icon name='right chevron' />
+        <a href="https://github.com/HamonOverdrive">
+        <Button color='black'>
+          <Icon name='github' /> Github
         </Button>
+        </a>
+        <a href="https://www.linkedin.com/in/robinlee64/">
+        <Button color='linkedin'>
+          <Icon name='linkedin' /> LinkedIn
+        </Button>
+        </a>
       </Modal.Actions>
     </Modal>
   )};
