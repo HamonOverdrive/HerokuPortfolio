@@ -9,7 +9,7 @@ import "./Home.css"
 import ProjectBanner from '../../components/ProjectBanner'
 import InfoModal from './components/InfoModal'
 
-import { BigWord  } from './styled.js';
+import { BigWord, PlainA  } from './styled.js';
 
 import MediaQuery from 'react-responsive';
 
@@ -97,7 +97,7 @@ class Home extends Component{
 
               <Transition.Group animation={animation} duration={duration}>
               {visibleTwo && <button className="redButton inline-block">INFORMATION</button>}
-                  {visibleTwo && <p className="buttonPara inline-block">Current Project</p>}
+                  {visibleTwo && <PlainA className="buttonPara inline-block" href="https://github.com/HamonOverdrive/netcore-react-auth-redux-roles-boilerplate">Current Project: NetCore React boilerplate</PlainA>}
               </Transition.Group>
 
             </Grid.Column>

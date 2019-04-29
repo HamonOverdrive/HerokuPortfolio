@@ -12,6 +12,15 @@ export const BigWord = styled.span`
   font-size: 200%;
 `
 
+export const PlainA = styled.a`
+  color: white;
+
+  &:hover{
+    color: white;
+    text-decoration: none;
+  }
+`
+
 
 export const Section = styled.main`
   display: flex;
