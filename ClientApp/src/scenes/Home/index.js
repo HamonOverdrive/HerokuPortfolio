@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { Header, Icon, Divider, Image, Segment, Grid, Container, Label, Transition } from 'semantic-ui-react'
+import { Icon, Image, Grid, Container, Transition } from 'semantic-ui-react'
 
 import YoutubeBackground from 'react-youtube-background'
 import "./Home.css"
@@ -9,7 +9,9 @@ import "./Home.css"
 import ProjectBanner from '../../components/ProjectBanner'
 import InfoModal from './components/InfoModal'
 
-import { BigWord, TransitionDiv } from './styled.js';
+import { BigWord, PlainA  } from './styled.js';
+
+import MediaQuery from 'react-responsive';
 
 class Home extends Component{
   constructor(props){
@@ -55,6 +57,7 @@ class Home extends Component{
 
 
 
+
   render(){
     const { animation, duration, visible, visibleTwo, bannerVisible } = this.state
     return(
@@ -68,18 +71,16 @@ class Home extends Component{
 
       >
       <Container>
-        <Grid>
-          <Grid.Row>
+        <Grid stackable>
+          <Grid.Row className="nowrap">
             <Grid.Column>
             <h5>Lee
               <br></br>
               Productions
             </h5>
             </Grid.Column>
-            <Grid.Column floated='right'>
-              {/* <Transition visible={bannerVisible} animation='fly left' duration={1500}> */}
+            <Grid.Column>
                 <InfoModal />
-              {/* </Transition> */}
             </Grid.Column>
           </Grid.Row>
           <Grid.Row className="marginRow" verticalAlign="bottom">
@@ -95,18 +96,22 @@ class Home extends Component{
               </Transition.Group>
 
               <Transition.Group animation={animation} duration={duration}>
-              {visibleTwo && <button className="redButton inline-block">INFORMATION</button>}
-                  {visibleTwo && <p className="buttonPara inline-block">Current Project</p>}
+                {visibleTwo && <a className="redButton inline-block"        href="https://github.com/HamonOverdrive/netcore-react-auth-redux-roles-boilerplate">INFORMATION</a>}
+                {visibleTwo && <PlainA className="buttonPara inline-block"    href="https://github.com/HamonOverdrive/netcore-react-auth-redux-roles-boilerplate">Current Project: NetCore React boilerplate</PlainA>}
               </Transition.Group>
 
             </Grid.Column>
+            {/* if the screen size is 1224 or more it will show the project banner */}
+            <MediaQuery minWidth={1200}>
             <Grid.Column width={7}>
-            <Transition visible={bannerVisible} animation='scale' duration={800}>
-              <Image.Group size="small">
-                <ProjectBanner />
-              </Image.Group>
+              <Transition visible={bannerVisible} animation='scale' duration={800}>
+                <Image.Group size="small">
+                  <ProjectBanner />
+                </Image.Group>
               </Transition>
             </Grid.Column>
+            </MediaQuery>
+
           </Grid.Row>
           <Grid.Row>
             <Grid.Column className="footerColumn">
@@ -133,6 +138,7 @@ class Home extends Component{
               </Transition.Group>
             </Grid.Column>
           </Grid.Row>
+
 
         </Grid>
         </Container>

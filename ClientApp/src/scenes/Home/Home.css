@@ -65,6 +65,13 @@
   margin-right: 1rem;
 }
 
+.redButton:hover{
+  text-decoration: none;
+  color: white;
+}
+
+
+
 .marginRow > div > .buttonPara{
   display: inline-block;
   border-bottom: white solid 0.5px;
@@ -113,3 +120,6 @@ i.icon, i.icons{
   display: flex!important;
 }
 
+.row.nowrap{
+  flex-wrap: nowrap !important;
+}
