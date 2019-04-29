@@ -96,8 +96,8 @@ class Home extends Component{
               </Transition.Group>
 
               <Transition.Group animation={animation} duration={duration}>
-              {visibleTwo && <button className="redButton inline-block">INFORMATION</button>}
-                  {visibleTwo && <PlainA className="buttonPara inline-block" href="https://github.com/HamonOverdrive/netcore-react-auth-redux-roles-boilerplate">Current Project: NetCore React boilerplate</PlainA>}
+                {visibleTwo && <a className="redButton inline-block"        href="https://github.com/HamonOverdrive/netcore-react-auth-redux-roles-boilerplate">INFORMATION</a>}
+                {visibleTwo && <PlainA className="buttonPara inline-block"    href="https://github.com/HamonOverdrive/netcore-react-auth-redux-roles-boilerplate">Current Project: NetCore React boilerplate</PlainA>}
               </Transition.Group>
 
             </Grid.Column>
