@@ -138,7 +138,6 @@ class Home extends Component{
               </Transition.Group>
             </Grid.Column>
           </Grid.Row>
-          {/* </MediaQuery> */}
 
 
         </Grid>
