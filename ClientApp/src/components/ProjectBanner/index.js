@@ -5,6 +5,7 @@ import "./ProjectBanner.css"
 const ProjectBanner = props => (
   <ul id="project_banner">
     <li>
+      <h2>Featured App</h2>
       <div className="wrapper">
         <div className="box">
           <a id="projectOne"></a>
@@ -13,7 +14,7 @@ const ProjectBanner = props => (
         </a>
       </div>
     </li>
-    <li>
+    {/* <li>
       <div className="wrapper">
           <div className="box">
             <a id="projectTwo"></a>
@@ -21,7 +22,7 @@ const ProjectBanner = props => (
           <a className="overlayTwo" href="https://dev-pandemic.firebaseapp.com/">
           </a>
       </div>
-    </li>
+    </li> */}
   </ul>
 );
 

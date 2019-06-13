@@ -30,7 +30,7 @@ const Projects = () => (
             <Item.Image size='tiny' src={Pandemic} />
 
             <Item.Content>
-              <Item.Header as="a" href="https://dev-pandemic.firebaseapp.com/">Pandemic Code Red</Item.Header>
+              <Item.Header as="a" href="#">Pandemic Code Red</Item.Header>
               <Item.Meta content='February 2019' />
               <Item.Description>
                 <p> Pandemic board game web application version of the game</p>
